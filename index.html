@@ -1,866 +1,664 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vertex - Inovação Através da Tecnologia</title>
-<meta name="description" content="Vertex é uma empresa de tecnologia e inovação especializada em cibersegurança, desenvolvimento de jogos, modelagem 3D e muito mais.">
-<meta name="keywords" content="Vertex, tecnologia, inovação, cibersegurança, TI, jogos, modelagem 3D, criptografia">
-<meta name="author" content="Vertex">
-<meta property="og:title" content="Vertex - Inovação Através da Tecnologia">
-<meta property="og:description" content="Soluções avançadas em tecnologia e inovação para o seu negócio.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.vertex.com.br">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<script src="https://cdn.tailwindcss.com/3.4.16">
-</script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: "#FFD700",
-        secondary: "#000000",
-        dark: "#111111",
-        light: "#f9f9f9",
-      },
-      borderRadius: {
-        none: "0px",
-        sm: "4px",
-        DEFAULT: "8px",
-        md: "12px",
-        lg: "16px",
-        xl: "20px",
-        "2xl": "24px",
-        "3xl": "32px",
-        full: "9999px",
-        button: "8px",
-      },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
-    },
-  },
-};
-</script>
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Poppins', sans-serif;
-scroll-behavior: smooth;
-background-color: #000000;
-color: #ffffff;
-background: linear-gradient(to bottom, #000000, #111111);
-}
-.product-card, .investment-card, form, .contact-info {
-background: rgba(255, 255, 255, 0.03);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 215, 0, 0.1);
-}
-.text-gray-600 {
-color: rgba(255, 255, 255, 0.7);
-}
-.text-gray-700, .text-gray-800 {
-color: rgba(255, 255, 255, 0.9);
-}
-.text-secondary {
-color: #ffffff;
-}
-input, textarea {
-background: rgba(255, 255, 255, 0.05);
-border: 1px solid rgba(255, 215, 0, 0.1);
-color: #ffffff;
-}
-input::placeholder, textarea::placeholder {
-color: rgba(255, 255, 255, 0.5);
-}
-input:focus, textarea:focus {
-border-color: #FFD700;
-background: rgba(255, 255, 255, 0.08);
-}
-.product-card:hover, .investment-card:hover {
-transform: translateY(-10px);
-border-color: rgba(255, 215, 0, 0.3);
-box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
-}
-section {
-position: relative;
-overflow: hidden;
-}
-section::before {
-content: '';
-position: absolute;
-width: 200px;
-height: 200px;
-background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-border-radius: 50%;
-}
-#products::before {
-top: 10%;
-left: -100px;
-}
-#about::before {
-bottom: 20%;
-right: -100px;
-}
-#invest::before {
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 400px;
-height: 400px;
-opacity: 0.05;
-}
-.particles-container {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-overflow: hidden;
-}
-.particle {
-position: absolute;
-background-color: rgba(255, 215, 0, 0.5);
-border-radius: 50%;
-animation: float 15s infinite ease-in-out;
-}
-@keyframes float {
-0%, 100% {
-transform: translateY(0) translateX(0);
-opacity: 0;
-}
-25% {
-opacity: 0.5;
-}
-50% {
-opacity: 0.8;
-}
-75% {
-opacity: 0.5;
-}
-}
-.nav-link {
-position: relative;
-}
-.nav-link::after {
-content: '';
-position: absolute;
-width: 0;
-height: 2px;
-bottom: -4px;
-left: 0;
-background-color: #FFD700;
-transition: width 0.3s ease;
-}
-.nav-link:hover::after,
-.nav-link.active::after {
-width: 100%;
-}
-.product-card {
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-.investment-card {
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.investment-card:hover {
-transform: scale(1.03);
-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
-input[type="number"] {
--moz-appearance: textfield;
-}
-.back-to-top {
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 99;
-opacity: 0;
-visibility: hidden;
-transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.back-to-top.visible {
-opacity: 1;
-visibility: visible;
-}
-</style>
-</head>
-<body class="bg-light">
-<!-- Preloader -->
-<!-- Header -->
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
-<div class="container mx-auto px-4 py-4 flex items-center justify-between">
-<a href="#" class="font-['Pacifico'] text-3xl text-primary">Vertex</a>
-<!-- Desktop Navigation -->
-<nav class="hidden md:flex items-center space-x-8">
-<a href="#home" class="nav-link text-white hover:text-primary transition-colors">Início</a>
-<a href="#products" class="nav-link text-white hover:text-primary transition-colors">Produtos</a>
-<a href="#invest" class="nav-link text-white hover:text-primary transition-colors">Investir</a>
-<a href="#about" class="nav-link text-white hover:text-primary transition-colors">Sobre</a>
-<a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contato</a>
-</nav>
-<!-- Mobile Menu Button -->
-<button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-menu-line ri-2x"></i>
-</div>
-</button>
-</div>
-<!-- Mobile Navigation -->
-<div class="md:hidden bg-secondary absolute w-full left-0 top-full shadow-lg py-4 px-4 hidden" id="mobile-menu">
-<nav class="flex flex-col space-y-4">
-<a href="#home" class="text-white hover:text-primary transition-colors py-2">Início</a>
-<a href="#products" class="text-white hover:text-primary transition-colors py-2">Produtos</a>
-<a href="#invest" class="text-white hover:text-primary transition-colors py-2">Investir</a>
-<a href="#about" class="text-white hover:text-primary transition-colors py-2">Sobre</a>
-<a href="#contact" class="text-white hover:text-primary transition-colors py-2">Contato</a>
-</nav>
-</div>
-</header>
-<!-- Hero Section -->
-<section id="home" class="relative h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=dark%20futuristic%20technology%20background%20with%20gold%20particles%20and%20digital%20elements%2C%20abstract%20tech%20concept%20with%20black%20and%20gold%20theme%2C%20minimalist%20design%20with%20subtle%20gold%20particle%20effects%2C%20high-quality%20professional%20corporate%20background&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-black bg-opacity-60"></div>
-<div class="particles-container" id="particles"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="max-w-3xl mx-auto text-center">
-<h1 class="text-4xl md:text-6xl font-bold text-white mb-6" id="hero-text">Inovação Através da Tecnologia</h1>
-<p class="text-xl text-gray-200 mb-8">Desenvolvemos soluções tecnológicas avançadas para impulsionar o futuro do seu negócio.</p>
-<a href="#products" class="inline-block bg-primary text-secondary font-semibold px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap">Explore Nossas Soluções</a>
-</div>
-</div>
-</section>
-<!-- Products Section -->
-<section id="products" class="py-20 bg-black">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Nossos Produtos</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Oferecemos uma ampla gama de soluções tecnológicas para atender às necessidades do seu negócio.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Product 1 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-shield-keyhole-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Cibersegurança</h3>
-<p class="text-gray-600 mb-4">Proteja seus dados e sistemas contra ameaças cibernéticas com nossas soluções avançadas de segurança.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 2 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-lock-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Segurança da Informação</h3>
-<p class="text-gray-600 mb-4">Garanta a confidencialidade, integridade e disponibilidade dos seus dados com nossas estratégias de proteção.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 3 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-computer-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Serviços de TI</h3>
-<p class="text-gray-600 mb-4">Soluções completas de TI para otimizar seus processos e aumentar a produtividade da sua empresa.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 4 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-lightbulb-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Inovação</h3>
-<p class="text-gray-600 mb-4">Transforme ideias em realidade com nossas soluções inovadoras e metodologias de desenvolvimento ágil.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 5 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-gamepad-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Criação de Jogos</h3>
-<p class="text-gray-600 mb-4">Desenvolvimento de jogos imersivos e interativos para diversas plataformas, com foco em experiência do usuário.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 6 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-3d-cube-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Modelagem 3D</h3>
-<p class="text-gray-600 mb-4">Criação de modelos 3D realistas para diversos setores, incluindo arquitetura, jogos e realidade virtual.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 7 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-lock-password-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Criptografia</h3>
-<p class="text-gray-600 mb-4">Soluções avançadas de criptografia para proteger dados sensíveis e garantir a privacidade das informações.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 8 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-edit-2-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Edição</h3>
-<p class="text-gray-600 mb-4">Serviços profissionais de edição de vídeo, áudio e imagem para projetos de marketing e comunicação.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-<!-- Product 9 -->
-<div class="product-card rounded-lg p-8 transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
-<i class="ri-cloud-line ri-2x text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold mb-3">Soluções em Nuvem</h3>
-<p class="text-gray-600 mb-4">Infraestrutura e serviços em nuvem escaláveis para otimizar seus recursos e reduzir custos operacionais.</p>
-<a href="#" class="text-primary font-medium hover:underline flex items-center">
-Saiba mais
-<i class="ri-arrow-right-line ml-1"></i>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section id="about" class="py-20 bg-black">
-<div class="container mx-auto px-4">
-<div class="flex flex-col lg:flex-row items-center gap-12">
-<div class="lg:w-1/2">
-<img src="https://readdy.ai/api/search-image?query=ultra%20modern%20tech%20company%20workspace%20with%20gold%20and%20black%20theme%2C%20dramatic%20lighting%2C%20cutting%20edge%20technology%20displays%20and%20interfaces%2C%20luxurious%20corporate%20environment%20with%20gold%20accents%2C%20cinematic%20composition%20with%20depth&width=600&height=500&seq=3&orientation=landscape" alt="Sobre a Vertex" class="rounded shadow-lg w-full h-auto object-cover">
-</div>
-<div class="lg:w-1/2">
-<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6">Sobre a Vertex</h2>
-<p class="text-gray-600 mb-4">A Vertex é uma empresa brasileira de tecnologia e inovação fundada em 2020, com o objetivo de oferecer soluções tecnológicas avançadas para empresas de todos os portes.</p>
-<p class="text-gray-600 mb-4">Nossa missão é impulsionar a transformação digital dos nossos clientes, fornecendo serviços de alta qualidade em cibersegurança, desenvolvimento de software, criação de jogos e muito mais.</p>
-<p class="text-gray-600 mb-6">Com uma equipe de profissionais altamente qualificados e apaixonados por tecnologia, estamos comprometidos em entregar resultados excepcionais e superar as expectativas dos nossos clientes.</p>
-<div class="grid grid-cols-2 gap-4 mb-8">
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-3">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span class="text-gray-700">Inovação Constante</span>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-3">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span class="text-gray-700">Excelência Técnica</span>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-3">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span class="text-gray-700">Foco no Cliente</span>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-3">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span class="text-gray-700">Compromisso com Resultados</span>
-</div>
-</div>
-<a href="#contact" class="inline-block bg-primary text-secondary font-semibold px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap">Entre em Contato</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Investment Section -->
-<section id="invest" class="py-32 bg-black relative overflow-hidden">
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.1),transparent_50%)]"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="text-center mb-20">
-<h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Invista na Vertex</h2>
-<p class="text-gray-400 max-w-2xl mx-auto text-lg">Faça parte do nosso crescimento e compartilhe do nosso sucesso com nossas opções de investimento premium.</p>
-</div>
-<div class="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
-<!-- Basic Plan -->
-<div class="investment-card flex-1 rounded-lg overflow-hidden transition-all duration-300 bg-black border border-primary/20 backdrop-blur-lg">
-<div class="bg-black/50 p-8 text-center border-b border-primary/20">
-<h3 class="text-2xl font-semibold text-white">Plano Básico de Ações</h3>
-</div>
-<div class="p-8">
-<div class="text-center mb-8">
-<span class="text-5xl font-bold text-primary">R$ 5</span>
-<span class="text-gray-400">/ação</span>
-</div>
-<ul class="space-y-6 mb-8">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-3">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span class="text-gray-400">Participação no lucro líquido da empresa</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Acesso a relatórios financeiros trimestrais</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Participação em assembleias de acionistas</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Prioridade em novos lançamentos de produtos</span>
-</li>
-</ul>
-<div class="space-y-4">
-<button class="w-full bg-primary text-black font-bold py-4 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap shadow-lg hover:shadow-primary/20">Investir Agora</button>
-<button class="w-full border-2 border-primary text-primary font-bold py-4 !rounded-button hover:bg-primary/10 transition-all duration-300 whitespace-nowrap analyze-investment" data-plan="basic" data-price="5">Análise de Opção</button>
-<div class="investment-analysis hidden bg-black/30 rounded-lg p-4 border border-primary/20 mt-4">
-<div class="space-y-4">
-<div class="flex items-center gap-4">
-<input type="number" min="1" class="shares-input w-full bg-black/50 border border-primary/30 text-white px-4 py-2 rounded focus:outline-none focus:border-primary" placeholder="Número de ações">
-</div>
-<div class="analysis-results hidden space-y-2 text-sm">
-<div class="flex justify-between text-gray-400">
-<span>Investimento Total:</span>
-<span class="total-investment text-white"></span>
-</div>
-<div class="flex justify-between text-gray-400">
-<span>Retorno Potencial (Anual):</span>
-<span class="potential-return text-primary"></span>
-</div>
-<div class="flex justify-between text-gray-400">
-<span>Projeção em 5 Anos:</span>
-<span class="five-year-projection text-primary"></span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Premium Plan -->
-<div class="investment-card flex-1 bg-black rounded-lg overflow-hidden border border-primary/30 backdrop-blur-lg relative transform hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.15)]">
-<div class="absolute top-4 right-4 bg-primary text-black px-4 py-1 text-sm font-bold rounded-full">Recomendado</div>
-<div class="bg-black/50 p-8 text-center border-b border-primary/30">
-<h3 class="text-2xl font-semibold text-white">Plano Premium de Ações</h3>
-</div>
-<div class="p-8">
-<div class="text-center mb-8">
-<span class="text-5xl font-bold text-primary">R$ 30</span>
-<span class="text-gray-400">/ação</span>
-</div>
-<ul class="space-y-6 mb-8">
-<li class="flex items-start">
-<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mt-0.5 mr-3">
-<i class="ri-check-line text-primary"></i>
-</div>
-<span class="text-gray-400">Investimentos em Subsidiária + Vertex</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Retornos mensais baseados no lucro líquido</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Acesso a relatórios financeiros mensais</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Direito a voto em decisões estratégicas</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Acesso antecipado a novos produtos e serviços</span>
-</li>
-</ul>
-<div class="space-y-4">
-<button class="w-full bg-primary text-black font-bold py-4 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap shadow-lg hover:shadow-primary/20">Investir Agora</button>
-<button class="w-full border-2 border-primary text-primary font-bold py-4 !rounded-button hover:bg-primary/10 transition-all duration-300 whitespace-nowrap analyze-investment" data-plan="premium" data-price="30">Análise de Opção</button>
-<div class="investment-analysis hidden bg-black/30 rounded-lg p-4 border border-primary/20 mt-4">
-<div class="space-y-4">
-<div class="flex items-center gap-4">
-<input type="number" min="1" class="shares-input w-full bg-black/50 border border-primary/30 text-white px-4 py-2 rounded focus:outline-none focus:border-primary" placeholder="Número de ações">
-</div>
-<div class="analysis-results hidden space-y-2 text-sm">
-<div class="flex justify-between text-gray-400">
-<span>Investimento Total:</span>
-<span class="total-investment text-white"></span>
-</div>
-<div class="flex justify-between text-gray-400">
-<span>Retorno Potencial (Anual):</span>
-<span class="potential-return text-primary"></span>
-</div>
-<div class="flex justify-between text-gray-400">
-<span>Projeção em 5 Anos:</span>
-<span class="five-year-projection text-primary"></span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-black">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Entre em Contato</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Estamos prontos para ajudar você a encontrar a solução ideal para o seu negócio.</p>
-</div>
-<div class="flex flex-col lg:flex-row gap-12">
-<div class="lg:w-1/2">
-<form class="rounded-lg p-8 transition-all duration-300">
-<div class="mb-6">
-<label for="name" class="block text-gray-700 mb-2">Nome Completo</label>
-<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Seu nome">
-</div>
-<div class="mb-6">
-<label for="email" class="block text-gray-700 mb-2">E-mail</label>
-<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Seu e-mail">
-</div>
-<div class="mb-6">
-<label for="subject" class="block text-gray-700 mb-2">Assunto</label>
-<input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Assunto da mensagem">
-</div>
-<div class="mb-6">
-<label for="message" class="block text-gray-700 mb-2">Mensagem</label>
-<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Sua mensagem"></textarea>
-</div>
-<button type="submit" class="w-full bg-primary text-secondary font-semibold py-3 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap">Enviar Mensagem</button>
-</form>
-</div>
-<div class="lg:w-1/2">
-<div class="contact-info rounded-lg p-8 h-full transition-all duration-300">
-<h3 class="text-xl font-semibold mb-6">Informações de Contato</h3>
-<div class="space-y-6 mb-8">
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
-<i class="ri-whatsapp-line text-primary"></i>
-</div>
-<div>
-<h4 class="font-medium text-gray-800 mb-1">WhatsApp</h4>
-<a href="https://wa.me/5554992451957" class="text-gray-600 hover:text-primary">+55 (54) 99245-1957</a>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
-<i class="ri-mail-line text-primary"></i>
-</div>
-<div>
-<h4 class="font-medium text-gray-800 mb-1">E-mail</h4>
-<a href="mailto:contato.vertex.oficial@gmail.com" class="text-gray-600 hover:text-primary">contato.vertex.oficial@gmail.com</a>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
-<i class="ri-map-pin-line text-primary"></i>
-</div>
-<div>
-<h4 class="font-medium text-gray-800 mb-1">Localização</h4>
-<p class="text-gray-600">Porto Alegre, RS - Brasil</p>
-</div>
-</div>
-</div>
-<h3 class="text-xl font-semibold mb-4">Redes Sociais</h3>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full text-white hover:bg-primary hover:text-secondary transition-colors">
-<i class="ri-facebook-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full text-white hover:bg-primary hover:text-secondary transition-colors">
-<i class="ri-instagram-line"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full text-white hover:bg-primary hover:text-secondary transition-colors">
-<i class="ri-linkedin-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full text-white hover:bg-primary hover:text-secondary transition-colors">
-<i class="ri-twitter-x-fill"></i>
-</a>
-</div>
-<div class="mt-8 h-64 bg-gray-200 rounded overflow-hidden">
-<div style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;" class="w-full h-full"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-secondary text-white py-12">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-<div>
-<a href="#" class="font-['Pacifico'] text-3xl text-primary mb-4 inline-block">Vertex</a>
-<p class="text-gray-400 mb-6">Inovação e tecnologia para impulsionar o futuro do seu negócio.</p>
-<div class="flex space-x-4">
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-facebook-fill"></i>
-</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-instagram-line"></i>
-</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-linkedin-fill"></i>
-</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-twitter-x-fill"></i>
-</a>
-</div>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
-<ul class="space-y-2">
-<li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Início</a></li>
-<li><a href="#products" class="text-gray-400 hover:text-primary transition-colors">Produtos</a></li>
-<li><a href="#invest" class="text-gray-400 hover:text-primary transition-colors">Investir</a></li>
-<li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">Sobre</a></li>
-<li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contato</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Produtos</h4>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Cibersegurança</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Segurança da Informação</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Serviços de TI</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Criação de Jogos</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Modelagem 3D</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Contato</h4>
-<ul class="space-y-4">
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-whatsapp-line"></i>
-</div>
-<span class="text-gray-400">+55 (54) 99245-1957</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-mail-line"></i>
-</div>
-<span class="text-gray-400">contato.vertex.oficial@gmail.com</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
-<i class="ri-map-pin-line"></i>
-</div>
-<span class="text-gray-400">Caxias do Sul, RS - Brasil</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Vertex. Todos os direitos reservados.</p>
-<div class="flex space-x-6">
-<a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">Política de Privacidade</a>
-<a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">Termos de Uso</a>
-<a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">Cookies</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- Back to Top Button -->
-<button id="back-to-top" class="back-to-top bg-primary text-secondary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-<i class="ri-arrow-up-line ri-lg"></i>
-</button>
-<!-- Scripts -->
-<script id="header-script">
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.getElementById("header");
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-  // Handle header background on scroll
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      header.classList.add("bg-secondary", "shadow-md");
-    } else {
-      header.classList.remove("bg-secondary", "shadow-md");
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertex - Tecnologia e Inovação em Jogos e Modelagem 3D</title>
+  
+  <!-- Google Fonts com preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Nosifer&family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Nosifer&family=Press+Start+2P&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Meta tags melhoradas -->
+  <meta name="description" content="Vertex: Especialistas em desenvolvimento de jogos, modelagem 3D e inteligência artificial. Criamos experiências imersivas com tecnologia de ponta.">
+  <meta name="keywords" content="Vertex, jogos indie, modelagem 3D, desenvolvimento de jogos, inteligência artificial, terror anos 80, Horror Cult, tecnologia games">
+  <meta name="author" content="Vertex Tecnologia">
+  <meta property="og:title" content="Vertex - Inovação em Jogos e Tecnologia">
+  <meta property="og:description" content="Desenvolvemos jogos imersivos e soluções tecnológicas inovadoras.">
+  <meta property="og:type" content="website">
+  
+  <style>
+    :root {
+      --primary-color: gold;
+      --secondary-color: #900;
+      --bg-dark: #111;
+      --bg-darker: #000;
+      --text-light: #fff;
+      --text-gray: #ccc;
     }
-  });
-  // Handle mobile menu toggle
-  mobileMenuButton.addEventListener("click", function () {
-    mobileMenu.classList.toggle("hidden");
-  });
-  // Close mobile menu when clicking on a link
-  const mobileLinks = mobileMenu.querySelectorAll("a");
-  mobileLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      mobileMenu.classList.add("hidden");
-    });
-  });
-});
-</script>
-<script id="particles-script">
-document.addEventListener("DOMContentLoaded", function () {
-  const particlesContainer = document.getElementById("particles");
-  const particleCount = 30;
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
-    // Random size between 3px and 8px
-    const size = Math.random() * 5 + 3;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    // Random position
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `${Math.random() * 100}%`;
-    // Random animation duration between 10s and 20s
-    const duration = Math.random() * 10 + 10;
-    particle.style.animationDuration = `${duration}s`;
-    // Random animation delay
-    particle.style.animationDelay = `${Math.random() * 5}s`;
-    particlesContainer.appendChild(particle);
-  }
-});
-</script>
-<script id="hero-text-script">
-document.addEventListener("DOMContentLoaded", function () {
-  const heroText = document.getElementById("hero-text");
-  const text = heroText.textContent;
-  heroText.textContent = "";
-  let i = 0;
-  const typeWriter = () => {
-    if (i < text.length) {
-      heroText.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 100);
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-  };
-  setTimeout(typeWriter, 2000);
-});
-</script>
-<script id="back-to-top-script">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopButton = document.getElementById("back-to-top");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      backToTopButton.classList.add("visible");
-    } else {
-      backToTopButton.classList.remove("visible");
+    
+    /* Header melhorado */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: var(--bg-darker);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
-  });
-  backToTopButton.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-});
-</script>
-<script id="investment-calculator-script">
-document.addEventListener("DOMContentLoaded", function () {
-  const analyzeButtons = document.querySelectorAll(".analyze-investment");
-  analyzeButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const analysisSection = this.nextElementSibling;
-      analysisSection.classList.toggle("hidden");
-      if (!analysisSection.classList.contains("hidden")) {
-        analysisSection.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-        });
-      }
-    });
-  });
-  const sharesInputs = document.querySelectorAll(".shares-input");
-  sharesInputs.forEach((input) => {
-    input.addEventListener("input", function () {
-      const plan = this.closest(".investment-card").querySelector(
-        ".analyze-investment",
-      ).dataset.plan;
-      const sharePrice = parseFloat(
-        this.closest(".investment-card").querySelector(".analyze-investment")
-          .dataset.price,
+    
+    .menu-button {
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--text-light);
+      user-select: none;
+      transition: color 0.3s;
+      background: none;
+      border: none;
+    }
+    
+    .menu-button:hover {
+      color: var(--primary-color);
+    }
+    
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+    
+    .menu a {
+      padding: 15px 0;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    
+    .menu a:hover {
+      color: var(--primary-color);
+    }
+    
+    .close-menu {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: var(--text-light);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--primary-color);
+      font-family: 'Cinzel Decorative', cursive;
+      text-shadow: 1px 1px 10px var(--primary-color);
+    }
+    
+    /* Hero section */
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 60vh;
+      max-height: 500px;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .grid-effect {
+      height: 50px;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 0, 255, 0.3),
+        rgba(255, 0, 255, 0.3) 10px,
+        transparent 10px,
+        transparent 20px
       );
-      const shares = parseInt(this.value) || 0;
-      const analysisResults = this.closest(
-        ".investment-analysis",
-      ).querySelector(".analysis-results");
-      if (shares > 0) {
-        const totalInvestment = shares * sharePrice;
-        const annualReturn =
-          plan === "premium" ? totalInvestment * 0.25 : totalInvestment * 0.15;
-        const fiveYearReturn = annualReturn * 5;
-        analysisResults.querySelector(".total-investment").textContent =
-          `R$ ${totalInvestment.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
-        analysisResults.querySelector(".potential-return").textContent =
-          `R$ ${annualReturn.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
-        analysisResults.querySelector(".five-year-projection").textContent =
-          `R$ ${fiveYearReturn.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
-        analysisResults.classList.remove("hidden");
-      } else {
-        analysisResults.classList.add("hidden");
+      animation: moveGrid 4s linear infinite;
+    }
+    
+    @keyframes moveGrid {
+      from { background-position: 0 0; }
+      to { background-position: 100px 100px; }
+    }
+    
+    /* Main content */
+    main {
+      flex: 1;
+      padding: 0 20px;
+    }
+    
+    section {
+      padding: 40px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    
+    /* Projects section */
+    .project {
+      border: 2px solid var(--primary-color);
+      padding: 25px;
+      background: #222;
+      margin-top: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+    }
+    
+    .project img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 15px var(--primary-color);
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    
+    .project h3 {
+      font-family: 'Nosifer', cursive;
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      text-shadow: 2px 2px 5px var(--secondary-color);
+      letter-spacing: 3px;
+      margin: 20px 0;
+    }
+    
+    .project p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Team section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .member {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-left: 4px solid var(--primary-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    
+    .member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .member h3 {
+      margin: 0 0 10px 0;
+      color: var(--primary-color);
+    }
+    
+    .details {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    
+    .member.active .details {
+      max-height: 100px;
+      margin-top: 10px;
+    }
+    
+    /* Contact section */
+    .contact-info {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    
+    .contact-info a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--bg-darker);
+      color: var(--text-gray);
+      margin-top: 50px;
+    }
+    
+    footer p {
+      margin: 5px 0;
+    }
+    
+    /* Cassette player */
+    .cassette-container {
+      text-align: center;
+      margin: 50px auto;
+      max-width: 200px;
+    }
+    
+    .cassette-container img {
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    
+    .cassette-container img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Retro reviews section */
+    .retro-section {
+      background: #121212;
+      color: #39ff14;
+      font-family: 'Press Start 2P', cursive;
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-top: 3px solid var(--primary-color);
+    }
+    
+    .retro-section h2 {
+      text-align: center;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+    }
+    
+    .retro-section form {
+      max-width: 500px;
+      margin: 0 auto 40px;
+      background: #1a1a1a;
+      padding: 30px;
+      border: 2px solid #ff00ff;
+      box-shadow: 0 0 20px #ff00ff;
+      border-radius: 8px;
+    }
+    
+    .retro-section label {
+      display: block;
+      margin-bottom: 15px;
+      color: #00ffff;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+    }
+    
+    .retro-section input[type="text"],
+    .retro-section textarea,
+    .retro-section select {
+      width: 100%;
+      background: #121212;
+      border: 2px solid #39ff14;
+      color: #39ff14;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.8rem;
+      padding: 12px;
+      margin-bottom: 25px;
+      border-radius: 4px;
+      outline: none;
+      box-shadow: 0 0 5px #39ff14 inset;
+      resize: none;
+    }
+    
+    .retro-section textarea {
+      height: 100px;
+    }
+    
+    .retro-section input[type="submit"] {
+      background: #ff00ff;
+      color: #121212;
+      border: none;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .retro-section input[type="submit"]:hover {
+      background: #ff66ff;
+      transform: translateY(-2px);
+    }
+    
+    .retro-section .reviews {
+      max-width: 600px;
+      margin: 0 auto;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 0 20px #00ffff;
+      background: #1a1a1a;
+    }
+    
+    .retro-section .review {
+      border-bottom: 1px solid #39ff14;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .retro-section .review:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .retro-section .review .name {
+      color: #ff00ff;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    
+    .retro-section .review .comment {
+      font-size: 0.7rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    
+    .retro-section .review .rating {
+      font-size: 0.9rem;
+      color: #39ff14;
+      letter-spacing: 2px;
+    }
+
+    /* Modal para imagens e QR Code */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      overflow: auto;
+    }
+    
+    .modal.show {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #00f, 0 0 50px #0ff;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Bloco Pix */
+    .bloco-pix {
+      background: #1a1a1a;
+      padding: 20px;
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    
+    .bloco-pix h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+    
+    .pix-symbol {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .pix-symbol:hover {
+      background: #ffd700;
+      transform: scale(1.05);
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hero {
+        height: 40vh;
       }
-    });
-  });
-});
-</script>
-<script id="smooth-scroll-script">
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
+      
+      .title {
+        font-size: 24px;
       }
-    });
-  });
-});
-</script>
+      
+      section {
+        padding: 30px 15px;
+      }
+      
+      .project h3 {
+        font-size: 1.8rem;
+      }
+      
+      .retro-section form {
+        padding: 20px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="menu-button" aria-label="Abrir menu">≡</button>
+    <h1 class="title">Vertex</h1>
+    <div class="menu" id="menu">
+      <button class="close-menu" aria-label="Fechar menu">×</button>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#contato">Contato</a>
+      <a href="#avaliacoes">Avaliações</a>
+    </div>
+  </header>
+
+  <div class="grid-effect"></div>
+
+  <div class="hero">
+    <img src="https://i.pinimg.com/originals/07/b3/05/07b305e5e03ba7f5660ee3f5d79f154f.gif" alt="Cena de terror retrô com efeitos glitch representando o estilo visual dos jogos Vertex" loading="lazy" />
+  </div>
+
+  <div class="grid-effect"></div>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>A Vertex é uma empresa de tecnologia e inovação fundada em 2023 por Nicolas Camargo Marques. Especializamo-nos no desenvolvimento de jogos imersivos, modelagem 3D de alta qualidade e soluções de inteligência artificial inovadoras.</p>
+      <p>Nossa missão é criar experiências digitais únicas que combinam narrativas envolventes com tecnologia de ponta, sempre com atenção aos detalhes e qualidade excepcional.</p>
+    </section>
+
+    <section id="projetos">
+      <h2>Nossos Projetos</h2>
+      <article class="project">
+        <img src="https://i.ibb.co/Rk6fmKJ/poster.jpg" alt="Poster do jogo Horror Cult mostrando uma cena assustadora em estilo anos 80" id="project-image" loading="lazy" />
+        <h3>Horror Cult</h3>
+        <p>Horror Cult é um jogo de terror psicológico que se passa nos anos 80, no sul dos EUA. Combinando elementos de survival horror com uma narrativa profunda sobre os horrores do racismo, o jogo oferece uma experiência imersiva com IA inovadora e mecânicas inteligentes.</p>
+        <p><strong>Status:</strong> Em desenvolvimento - Lançamento previsto para 2025</p>
+      </article>
+    </section>
+
+    <section id="equipe">
+      <h2>Nossa Equipe</h2>
+      <div class="team-grid">
+        <div class="member">
+          <h3>Nicolas Camargo Marques</h3>
+          <div class="details">CEO e Fundador. Responsável pela programação, modelagem 3D, engenharia mecânica e edição de vídeo/imagem.</div>
+        </div>
+        <div class="member">
+          <h3>Cauã Klippel Fergutz</h3>
+          <div class="details">Vice-CEO e Co-fundador. Programador e designer de jogos especializado em mecânicas de gameplay.</div>
+        </div>
+        <div class="member">
+          <h3>Matheus Nunes</h3>
+          <div class="details">Desenvolvedor de jogos e especialista em hardware. Responsável pela montagem e otimização de PCs.</div>
+        </div>
+        <div class="member">
+          <h3>Luan Chaves</h3>
+          <div class="details">Programador de jogos com foco em inteligência artificial e sistemas complexos.</div>
+        </div>
+        <div class="member">
+          <h3>Luiz Felipe</h3>
+          <div class="details">Artista 3D especializado em modelagem de personagens e ambientes realistas.</div>
+        </div>
+        <div class="member">
+          <h3>Henrique Marques</h3>
+          <div class="details">Designer de jogos com expertise em narrativa e design de níveis.</div>
+        </div>
+        <div class="member">
+          <h3>Henrique Longi</h3>
+          <div class="details">Desenvolvedor full-stack e editor de vídeo/imagem para trailers e materiais promocionais.</div>
+        </div>
+        <div class="member">
+          <h3>Davi Araldi</h3>
+          <div class="details">Engenheiro de software responsável por arquitetura de sistemas e otimização.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="contact-info">
+        <p>Interessado em nosso trabalho? Entre em contato para parcerias, oportunidades ou mais informações!</p>
+        <p>✉️ <a href="mailto:contato.vertex.oficial@gmail.com">contato.vertex.oficial@gmail.com</a></p>
+        <p>📞 <a href="tel:+5554992451957">+55 (54) 99245-1957</a></p>
+        <p>
+          <a href="https://www.instagram.com/_vertex_oficial?igsh=OXcycWgzMnRsZWd4" target="_blank" rel="noopener noreferrer" style="text-decoration:none; margin-right:15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E4405F" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:5px;">
+              <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm7.25 3.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+            </svg>
+            @_vertex_oficial
+          </a>
+          <a href="https://youtube.com/@vertex_oficial?si=JuUVoWxG_Vvnxy2e" target="_blank" rel="noopener noreferrer" style="text-decoration:none; margin-right:15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FF0000" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:5px;">
+              <path d="M10 15l5.19-3L10 9v6zM21.8 7.2a2.44 2.44 0 00-1.72-1.72C18.89 5 12 5 12 5s-6.89 0-8.08.48a2.44 2.44 0 00-1.72 1.72A25.08 25.08 0 002 12a25.08 25.08 0 00.18 4.8 2.44 2.44 0 001.72 1.72C5.11 19 12 19 12 19s6.89 0 8.08-.48a2.44 2.44 0 001.72-1.72A25.08 25.08 0 0022 12a25.08 25.08 0 00-.2-4.8z"/>
+            </svg>
+            Vertex_oficial
+          </a>
+          <a href="https://reddit.com/avatar/shop?utm_medium=android_app&utm_source=share" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FF4500" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:5px;">
+              <path d="M24 12a12 12 0 11-23.99.15A12 12 0 0124 12zm-7.04-2.52a1.5 1.5 0 10-2.93-.31 5.73 5.73 0 00-3.95 0 1.5 1.5 0 10-2.77.94c0 1.05 1.6 1.88 3.6 2.05a2.85 2.85 0 005.45 0c2-.17 3.6-1 3.6-2.05a1.5 1.5 0 00-1.95-1.63zM9 14a1 1 0 11-1-1 1 1 0 011 1zm5 0a1 1 0 11-1-1 1 1 0 011 1z"/>
+            </svg>
+            Vertex_oficial
+          </a>
+        </p>
+      </div>
+
+      <div class="bloco-pix">
+        <h3>Chave Pix:</h3>
+        <p>❖ 21eff4f2-9fac-4282-b44a-5ce9a20791ff</p>
+        <div class="pix-symbol">Ver QR Code</div>
+      </div>
+    </section>
+
+    <div class="cassette-container">
+      <img src="https://i.imgur.com/aWGROUg.png" alt="Player de cassete retrô - clique para tocar música ambiente" loading="lazy" id="cassette" />
+    </div>
+
+    <audio id="music" loop>
+      <source src="https://www.dropbox.com/scl/fi/xikhgmtqvyluqovrw61aj/relaxing-ambient-music-337579.mp3?rlkey=qe25wu91al0bdpmkq4k4pj8we&raw=1" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <section class="retro-section" id="avaliacoes">
+      <h2>Avaliações Vertex</h2>
+
+      <form id="review-form">
+        <label for="name">NOME</label>
+        <input type="text" id="name" required placeholder="Seu nome" aria-label="Seu nome" />
+
+        <label for="comment">COMENTÁRIO</label>
+        <textarea id="comment" rows="3" required placeholder="Deixe seu comentário" aria-label="Seu comentário"></textarea>
+
+        <label for="rating">NOTA</label>
+        <select id="rating" required aria-label="Sua avaliação">
+          <option value="" disabled selected>Selecione a nota</option>
+          <option value="1">1 - Péssimo</option>
+          <option value="2">2 - Ruim</option>
+          <option value="3">3 - Médio</option>
+          <option value="4">4 - Bom</option>
+          <option value="5">5 - Excelente</option>
+        </select>
+
+        <input type="submit" value="ENVIAR AVALIAÇÃO" aria-label="Enviar avaliação" />
+        <div id="form-feedback" style="display: none; margin-top: 15px; font-size: 0.8rem;"></div>
+      </form>
+
+      <div class="reviews" id="reviews-container">
+        <!-- Avaliações serão carregadas aqui via JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Vertex Tecnologia. Todos os direitos reservados.</p>
+    <p>Desenvolvido com paixão por games e tecnologia.</p>
+  </footer>
 </body>
-</html>
+</hmtl>
